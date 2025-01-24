@@ -1,9 +1,4 @@
-function Painel() {
-  return (
-    <div>
-      <h1>texto</h1>
-    </div>
-  );
-}
+import React, { useState } from "react";
 
+function Painel() {}
 export default Painel;

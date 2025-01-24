@@ -20,7 +20,13 @@ function CheckboxColor(props) {
       <label for={props.id} className="label">
         {props.title}
       </label>
-      <input type="radio" name={props.name} id={props.id} />
+      <input
+        type={props.type}
+        value={props.value}
+        name={props.name}
+        id={props.id}
+        onChange={props.onChange}
+      />
     </div>
   );
 }
