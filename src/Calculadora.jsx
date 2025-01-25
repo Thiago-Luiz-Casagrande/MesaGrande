@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CheckboxColor from "./CheckboxColor.jsx";
 import "./Calculadora.css";
-import ButtonClicado from "./ButtonClicado.jsx";
+
 import {
   makeHook1,
   makeHook2,
@@ -14,9 +14,7 @@ import {
   makeHook9,
   makeHook10,
   makeHook11,
-} from "./makeHook.jsx";
-export const largura = 10;
-export const comprimento = 10;
+} from "./MakeHook.jsx";
 
 function Calculadora() {
   const [branco, setBranco] = useState("Branco");
@@ -40,23 +38,85 @@ function Calculadora() {
     setMostrarComponente(true); // Atualiza o estado para mostrar o componente
   };
 
-  const [varCaixa, setVarCaixa] = useState(10);
+  const valores = {
+    chBranco: 210,
+    chSolido: 300,
+    chMadeirado: 350,
+    chFundo: 150,
+    cxTomada: 40,
+    fitaBorda: 9,
+    passaFio: 5,
+    fitaLed: 80,
+    fioEletrico: 7,
+  };
 
-  function teste() {
-    const valores = {
-      chBranco: 210,
-      chSolido: 300,
-      chMadeirado: 350,
-      chFundo: 150,
-      cxTomada: 40,
-      passaFio: 5,
-      fitaLed: 80,
-      fioEletrico: 7,
-    };
+  let varCaixa = 0;
 
-    setVarCaixa(valores.chBranco + valores.chFundo);
+  const teste = () => {
+    if (comprimento < 350 || largura < 350) {
+      switch (selectPes) {
+        case "Branco":
+          varCaixa += valores.chBranco;
+          break;
+        case "Sólido":
+          varCaixa += valores.chSolido;
+          break;
+        case "Madeirado":
+          varCaixa += valores.chMadeirado;
+          break;
+      }
+      let calTampoMad = 1;
+      if (comprimento > 270 || largura > 270) {
+        calTampoMad = 2;
+      }
+      switch (selectTampo) {
+        case "Branco":
+          varCaixa += calTampoMad * valores.chBranco;
+          break;
+        case "Sólido":
+          varCaixa += calTampoMad * valores.chSolido;
+          break;
+        case "Madeirado":
+          varCaixa += calTampoMad * valores.chMadeirado;
+          break;
+      }
+
+      switch (selectEnergia) {
+        case "PassaFio":
+          varCaixa += valores.passaFio;
+          break;
+        case "CaixaDeTomadas":
+          varCaixa += valores.cxTomada;
+          break;
+      }
+      if (showSemPainel) {
+        varCaixa += 0;
+      } else {
+        switch (selectPainel) {
+          case "Branco":
+            varCaixa += valores.chBranco;
+            break;
+          case "Sólido":
+            varCaixa += valores.chSolido;
+            break;
+          case "Madeirado":
+            varCaixa += valores.chMadeirado;
+            break;
+        }
+        if (showFitaLed) varCaixa += valores.fitaLed;
+      }
+      if (showMontagem && showFrete) {
+        varCaixa += 100;
+        varCaixa += 150;
+        varCaixa += 4 * distDestino;
+      }
+      if (showMontagem && !showFrete) {
+        varCaixa += 150;
+        varCaixa += 1 * distDestino;
+      }
+    }
     return varCaixa;
-  }
+  };
 
   return (
     <div className="bigbox">
@@ -121,7 +181,7 @@ function Calculadora() {
           <CheckboxColor
             title="Passa fio"
             id="7"
-            name="pes"
+            name="energia"
             type="radio"
             value="PassaFio"
             onChange={tipoEnergia}
@@ -129,7 +189,7 @@ function Calculadora() {
           <CheckboxColor
             title="Caixa de tomadas"
             id="8"
-            name="pes"
+            name="energia"
             type="radio"
             value="CaixaDeTomadas"
             onChange={tipoEnergia}
