@@ -14,6 +14,8 @@ import {
   makeHook9,
   makeHook10,
   makeHook11,
+  makeHook12,
+  makeHook13,
 } from "./MakeHook.jsx";
 
 function Calculadora() {
@@ -32,12 +34,21 @@ function Calculadora() {
   const { distDestino, handleChange } = makeHook9();
   const { largura, tamanhoLargura } = makeHook10();
   const { comprimento, tamanhoComprimento } = makeHook11();
+  const { showSemEnergia, checkSemEnergia } = makeHook12();
+  const { showTamRef, checkTamRef } = makeHook13();
 
   const [mostrarComponente, setMostrarComponente] = useState(false);
-  const clickCalcular = () => {
+  var varCaixa = 0;
+  var resultado = 0;
+  const handleClick = () => {
     setMostrarComponente(true); // Atualiza o estado para mostrar o componente
-  };
 
+    setTimeout(() => {
+      setMostrarComponente(false);
+      console.log("resultado " + resultado);
+      console.log("varCaixa " + varCaixa);
+    }, 1000); // 1000 ms = 1 segundos
+  };
   const valores = {
     chBranco: 210,
     chSolido: 300,
@@ -50,9 +61,15 @@ function Calculadora() {
     fioEletrico: 7,
   };
 
-  let varCaixa = 0;
+  let quantFita = 0;
 
   const teste = () => {
+    if (showTamRef) {
+      varCaixa += valores.chFundo;
+      quantFita = 0.02 * largura + 0.02 * comprimento;
+      quantFita = quantFita * valores.fitaBorda;
+      varCaixa += quantFita;
+    }
     if (comprimento < 350 || largura < 350) {
       switch (selectPes) {
         case "Branco":
@@ -80,14 +97,17 @@ function Calculadora() {
           varCaixa += calTampoMad * valores.chMadeirado;
           break;
       }
-
-      switch (selectEnergia) {
-        case "PassaFio":
-          varCaixa += valores.passaFio;
-          break;
-        case "CaixaDeTomadas":
-          varCaixa += valores.cxTomada;
-          break;
+      if (!showSemEnergia) {
+        varCaixa += 0;
+      } else {
+        switch (selectEnergia) {
+          case "PassaFio":
+            varCaixa += valores.passaFio;
+            break;
+          case "CaixaDeTomadas":
+            varCaixa += valores.cxTomada;
+            break;
+        }
       }
       if (showSemPainel) {
         varCaixa += 0;
@@ -115,7 +135,16 @@ function Calculadora() {
         varCaixa += 1 * distDestino;
       }
     }
-    return varCaixa;
+    varCaixa = varCaixa * 2.4;
+    resultado = varCaixa;
+    const formatarValor = (varCaixa) => {
+      return varCaixa.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      });
+    };
+    console.log(varCaixa);
+    return formatarValor(varCaixa);
   };
 
   return (
@@ -151,9 +180,12 @@ function Calculadora() {
         </div>
         <div className="selectColor">
           <p className="chackbox">Cores do tampo:</p>
+          <input type="checkbox" name="tamRef" id="4" onChange={checkTamRef} />
+          <label htmlFor="tamRef">Tampo Reforçado</label>
+          <br />
           <CheckboxColor
             title={branco}
-            id="4"
+            id="5"
             name="tampo"
             type="radio"
             value={branco}
@@ -161,7 +193,7 @@ function Calculadora() {
           />
           <CheckboxColor
             title={solido}
-            id="5"
+            id="6"
             name="tampo"
             type="radio"
             value={solido}
@@ -169,18 +201,27 @@ function Calculadora() {
           />
           <CheckboxColor
             title={madeirado}
-            id="6"
+            id="7"
             name="tampo"
             type="radio"
             value={madeirado}
             onChange={coresTampo}
           />
         </div>
+        <br />
         <div className="selectColor">
           <p className="chackbox">Energia</p>
+          <input
+            type="checkbox"
+            name="sEnergia"
+            id="8"
+            onChange={checkSemEnergia}
+          />
+          <label htmlFor="sPainel">Sem Energia</label>
+          <br />
           <CheckboxColor
             title="Passa fio"
-            id="7"
+            id="9"
             name="energia"
             type="radio"
             value="PassaFio"
@@ -188,26 +229,27 @@ function Calculadora() {
           />
           <CheckboxColor
             title="Caixa de tomadas"
-            id="8"
+            id="10"
             name="energia"
             type="radio"
             value="CaixaDeTomadas"
             onChange={tipoEnergia}
           />
         </div>
+        <br />
         <div className="selectColor">
           <p className="chackbox">Cores do painel: (opcional)</p>
           <input
             type="checkbox"
             name="sPainel"
-            id="9"
+            id="11"
             onChange={checkSemPainel}
           />
           <label htmlFor="sPainel">Sem Painel</label>
           <br />
           <CheckboxColor
             title={branco}
-            id="10"
+            id="12"
             name="painel"
             type="radio"
             value={branco}
@@ -215,7 +257,7 @@ function Calculadora() {
           />
           <CheckboxColor
             title={solido}
-            id="11"
+            id="13"
             name="painel"
             type="radio"
             value={solido}
@@ -231,7 +273,7 @@ function Calculadora() {
           />
           <CheckboxColor
             title="Fita LED"
-            id="13"
+            id="14"
             name="painel"
             type="checkbox"
             onChange={checkFitaLed}
@@ -240,13 +282,13 @@ function Calculadora() {
         <br />
         <CheckboxColor
           title="Montagem"
-          id="14"
+          id="15"
           type="checkbox"
           onChange={checkMontagem}
         />
         <CheckboxColor
           title="Frete"
-          id="11"
+          id="16"
           onChange={checkfrete}
           type="checkbox"
         />
@@ -284,12 +326,13 @@ function Calculadora() {
           />
         </div>
         <div className="calcular">
-          <button className="buttonCalcular" onClick={clickCalcular}>
+          <button className="buttonCalcular" onClick={handleClick}>
             Calcular
           </button>
           <p className="precoFinal">
-            Valor Total: R${mostrarComponente && teste()}*
+            Valor Total: {mostrarComponente ? teste() : resultado}
           </p>
+          <h4>*</h4>
         </div>
         <h6>*este valor pode ter uma alteração de até 10%</h6>
       </div>

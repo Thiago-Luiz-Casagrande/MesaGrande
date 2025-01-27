@@ -113,3 +113,23 @@ export function makeHook11() {
     tamanhoComprimento,
   };
 }
+export function makeHook12() {
+  const [showSemEnergia, setShowSemEnergia] = useState(false); // Armazena o valor do radio
+  const checkSemEnergia = (e) => {
+    setShowSemEnergia(e.target.value);
+  };
+  return {
+    showSemEnergia,
+    checkSemEnergia,
+  };
+}
+export function makeHook13() {
+  const [showTamRef, setshowTamRef] = useState(false); // Armazena o valor do radio
+  const checkTamRef = (e) => {
+    setshowTamRef(e.target.value);
+  };
+  return {
+    showTamRef,
+    checkTamRef,
+  };
+}

@@ -1,6 +1,6 @@
 .bigbox {
   width: 85vw;
-  height: 120vh;
+  height: 130vh;
 
   background-image: url("imagemFundo.png"); /* Caminho da imagem */
   background-size: cover; /* Faz a imagem cobrir toda a área */
@@ -17,16 +17,17 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   display: flex;
   height: 5vh;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
+  justify-content: center;
+  align-items: center;
   width: 100%;
   font-size: clamp(20px, 2.5vw, 27px);
   margin-top: 20px;
 }
 .textbox {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  margin: 20px 0 0vw 20vw;
-  width: 100%;
+  margin: 20px 0vw 0vw 20vw;
+  margin-left: 23vw;
+  width: 80%;
   height: 80vh;
 }
 .chackbox {
