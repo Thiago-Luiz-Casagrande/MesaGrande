@@ -45,8 +45,6 @@ function Calculadora() {
 
     setTimeout(() => {
       setMostrarComponente(false);
-      console.log("resultado " + resultado);
-      console.log("varCaixa " + varCaixa);
     }, 1000); // 1000 ms = 1 segundos
   };
   const valores = {
@@ -64,6 +62,7 @@ function Calculadora() {
   let quantFita = 0;
 
   const teste = () => {
+    varCaixa = 0;
     if (showTamRef) {
       varCaixa += valores.chFundo;
       quantFita = 0.02 * largura + 0.02 * comprimento;
@@ -143,10 +142,10 @@ function Calculadora() {
         currency: "BRL",
       });
     };
-    console.log(varCaixa);
-    return formatarValor(varCaixa);
+    valorFinal = formatarValor(varCaixa);
+    return valorFinal;
   };
-
+  console.log(valorFinal);
   return (
     <div className="bigbox">
       <h2 className="titleBox">Central de Personalização</h2>
@@ -330,7 +329,7 @@ function Calculadora() {
             Calcular
           </button>
           <p className="precoFinal">
-            Valor Total: {mostrarComponente ? teste() : resultado}
+            Valor Total: {mostrarComponente ? teste() : valorFinal}
           </p>
           <h4>*</h4>
         </div>
