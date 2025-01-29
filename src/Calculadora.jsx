@@ -39,7 +39,7 @@ function Calculadora() {
 
   const [mostrarComponente, setMostrarComponente] = useState(false);
   var varCaixa = 0;
-  var resultado = 0;
+  let extras = 0;
   const handleClick = () => {
     setMostrarComponente(true); // Atualiza o estado para mostrar o componente
 
@@ -47,6 +47,7 @@ function Calculadora() {
       setMostrarComponente(false);
     }, 1000); // 1000 ms = 1 segundos
   };
+
   const valores = {
     chBranco: 210,
     chSolido: 300,
@@ -96,7 +97,7 @@ function Calculadora() {
           varCaixa += calTampoMad * valores.chMadeirado;
           break;
       }
-      if (!showSemEnergia) {
+      if (showSemEnergia) {
         varCaixa += 0;
       } else {
         switch (selectEnergia) {
@@ -125,27 +126,30 @@ function Calculadora() {
         if (showFitaLed) varCaixa += valores.fitaLed;
       }
       if (showMontagem && showFrete) {
-        varCaixa += 100;
-        varCaixa += 150;
-        varCaixa += 4 * distDestino;
+        extras += 100; // gasolina padrao
+        extras += 150; // diaria montagem
+        extras += 4 * distDestino; // gasolina extra
       }
       if (showMontagem && !showFrete) {
-        varCaixa += 150;
-        varCaixa += 1 * distDestino;
+        extras += 150; // diaria montagem
+        extras += 1 * distDestino; // gasolina extra
+      }
+      if (!showMontagem && showFrete) {
+        extras += 100; // gasolina padrao
+        extras += 4 * distDestino; // gasolina extra
       }
     }
     varCaixa = varCaixa * 2.4;
-    resultado = varCaixa;
+    varCaixa += extras;
     const formatarValor = (varCaixa) => {
       return varCaixa.toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL",
       });
     };
-    valorFinal = formatarValor(varCaixa);
-    return valorFinal;
+
+    return formatarValor(varCaixa);
   };
-  console.log(valorFinal);
   return (
     <div className="bigbox">
       <h2 className="titleBox">Central de Personalização</h2>
@@ -329,7 +333,7 @@ function Calculadora() {
             Calcular
           </button>
           <p className="precoFinal">
-            Valor Total: {mostrarComponente ? teste() : valorFinal}
+            Valor Total: {mostrarComponente ? teste() : teste()}
           </p>
           <h4>*</h4>
         </div>
