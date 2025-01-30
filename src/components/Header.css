@@ -9,6 +9,8 @@
   background-color: rgb(212, 212, 212);
   position: fixed;
   padding-left: 2vw;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 .headerordem {
   display: flex;

@@ -1,0 +1,23 @@
+.bigBox {
+  background-image: url("imagemPainel.png");
+  background-size: cover; /* Faz a imagem cobrir toda a área */
+  background-repeat: no-repeat; /* Evita repetição */
+  background-position: center;
+  margin: 4vw 0;
+  height: 350px;
+  padding-top: 5vh;
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.5);
+}
+.boxText {
+  margin-left: 55vw;
+  color: white;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: x-large;
+}
+#descricaoPessoal {
+  color: burlywood;
+  margin: 5vh 3vw 0;
+  font-size: x-large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}

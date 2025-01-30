@@ -1,0 +1,35 @@
+.caixaTotal {
+  margin: 5vw 7.5vw 5vw 7.5vw;
+  width: 85vw;
+  height: 12vw;
+  background-color: rgb(230, 230, 230);
+  border: solid 2px rgb(219, 219, 219);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.simbolos {
+  width: 5vw;
+}
+.linhaVertical {
+  width: 2px;
+  height: 6vw;
+  background-color: rgb(209, 208, 208);
+  display: flex;
+  float: left;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+.conjuntoLogos {
+  width: 27vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: flex;
+  float: left;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
