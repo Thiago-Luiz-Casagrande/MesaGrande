@@ -7,6 +7,7 @@ import Calculadora from "./Calculadora.jsx";
 import Painel from "./Painel.jsx";
 import Fpagamento from "./Fpagamento.jsx";
 import Footer from "./Footer.jsx";
+import Depoimentos from "./Depoimentos.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById("root")).render(
     <Calculadora />
     <Fpagamento />
     <Painel />
+    <Depoimentos />
     <Footer />
   </StrictMode>
 );
