@@ -1,22 +1,22 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Header from "./components/Header.jsx";
-import App from "./App.jsx";
-import "./index.css";
-import Calculadora from "./Calculadora.jsx";
-import Painel from "./Painel.jsx";
-import Fpagamento from "./Fpagamento.jsx";
-import Footer from "./Footer.jsx";
-import Depoimentos from "./Depoimentos.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Principal from "./principal";
+import AdminPage from "./AdminPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Principal />,
+  },
+  {
+    path: "/admin",
+    element: <AdminPage />,
+  },
+]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Header />
-    <App />
-    <Calculadora />
-    <Fpagamento />
-    <Painel />
-    <Depoimentos />
-    <Footer />
+    <RouterProvider router={router} />
   </StrictMode>
 );
