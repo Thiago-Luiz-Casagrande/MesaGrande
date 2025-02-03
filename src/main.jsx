@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Principal from "./principal";
 import AdminPage from "./AdminPage";
+import Exemplos from "./Exemplos";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <AdminPage />,
+  },
+  {
+    path: "/exemplos",
+    element: <Exemplos />,
   },
 ]);
 

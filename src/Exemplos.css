@@ -1,0 +1,16 @@
+body {
+  background-color: rgb(216, 216, 216);
+}
+.cliente1 {
+  padding-top: 9vw;
+  padding-left: 3vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+#imagemMesa {
+  margin: 2vh;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  border: 3px solid white;
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.5);
+}

@@ -38,7 +38,6 @@ function AdminPage() {
   //   localStorage.setItem("precoFitaLed", precoChBranco);
   //   localStorage.setItem("precoFioEletrico", precoChBranco);
   // }
-
   return (
     <div>
       <Header />

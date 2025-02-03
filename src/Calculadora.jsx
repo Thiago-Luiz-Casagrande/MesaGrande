@@ -48,20 +48,23 @@ function Calculadora() {
     }, 1000); // 1000 ms = 1 segundos
   };
 
+  // let precoBranc = Number(localStorage.getItem("precoChBranco"));
+  // console.log(precoBranc);
+
   const valores = {
-    chBranco: 210,
-    chSolido: 300,
-    chMadeirado: 350,
-    chFundo: 150,
-    cxTomada: 40,
-    fitaBorda: 9,
-    passaFio: 5,
-    fitaLed: 80,
-    fioEletrico: 7,
+    chBranco: Number(localStorage.getItem("precoChBranco")),
+    chSolido: Number(localStorage.getItem("precoChSolido")),
+    chMadeirado: Number(localStorage.getItem("precoChMadeirado")),
+    chFundo: Number(localStorage.getItem("precoChFundo")),
+    cxTomada: Number(localStorage.getItem("precoTomada")),
+    fitaBorda: Number(localStorage.getItem("precoFitaBorda")),
+    passaFio: Number(localStorage.getItem("precoPassaFio")),
+    fitaLed: Number(localStorage.getItem("FitaLed")),
+    fioEletrico: Number(localStorage.getItem("precoFioEletrico")),
   };
 
   let quantFita = 0;
-  console.log(localStorage.getItem("idade"));
+
   const teste = () => {
     varCaixa = 0;
     if (showTamRef) {
@@ -147,7 +150,7 @@ function Calculadora() {
         currency: "BRL",
       });
     };
-
+    console.log(varCaixa);
     return formatarValor(varCaixa);
   };
   return (
