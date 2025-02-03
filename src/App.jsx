@@ -4,7 +4,11 @@ function App() {
   return (
     <div>
       <p className="espassamento"></p>
-      <img className="imagemEntrada" src="imagemEntrada.png" width={1270} />
+      <img
+        className="imagemEntrada"
+        src="src/Images/imagemEntrada.png"
+        width={1270}
+      />
       <h1 className=""></h1>
     </div>
   );

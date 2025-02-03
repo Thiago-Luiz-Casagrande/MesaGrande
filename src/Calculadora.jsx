@@ -61,7 +61,7 @@ function Calculadora() {
   };
 
   let quantFita = 0;
-
+  console.log(localStorage.getItem("idade"));
   const teste = () => {
     varCaixa = 0;
     if (showTamRef) {

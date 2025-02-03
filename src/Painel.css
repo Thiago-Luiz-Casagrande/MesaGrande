@@ -1,5 +1,5 @@
 .bigBox {
-  background-image: url("imagemPainel.png");
+  background-image: url("src/Images/imagemPainel.png");
   background-size: cover; /* Faz a imagem cobrir toda a área */
   background-repeat: no-repeat; /* Evita repetição */
   background-position: center;
