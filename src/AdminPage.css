@@ -7,3 +7,14 @@
   padding-left: 5vw;
   display: block;
 }
+input {
+  margin-left: 1vw;
+  background-color: rgb(215, 215, 215);
+  border: solid 1px;
+  border-radius: 5px;
+  outline: none;
+}
+input:focus {
+  border-color: rgb(0, 0, 255);
+  box-shadow: 0 0 5px rgba(60, 0, 255, 0.858);
+}

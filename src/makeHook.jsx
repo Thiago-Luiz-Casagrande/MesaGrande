@@ -133,3 +133,111 @@ export function makeHook13() {
     checkTamRef,
   };
 }
+export function makeHook14() {
+  const [precoChBranco, setPrecoChBranco] = useState(""); // Armazena o valor do radio
+  const setValorChBranca = (e) => {
+    const valorChBranca = parseFloat(e.target.value) || 0;
+    setPrecoChBranco(valorChBranca);
+    localStorage.setItem("precoChBranco", precoChBranco);
+  };
+  return {
+    precoChBranco,
+    setValorChBranca,
+  };
+}
+export function makeHook15() {
+  const [precoChSolido, setprecoChSolido] = useState(""); // Armazena o valor do radio
+  const setValorChSolido = (e) => {
+    const valorChSolido = parseFloat(e.target.value) || 0;
+    setprecoChSolido(valorChSolido);
+    localStorage.setItem("precoChSolido", precoChSolido);
+  };
+  return {
+    precoChSolido,
+    setValorChSolido,
+  };
+}
+export function makeHook16() {
+  const [precoChMadeirado, setPrecoChMadeirado] = useState(""); // Armazena o valor do radio
+  const setValorChMadeirado = (e) => {
+    const valorChmMadeirado = parseFloat(e.target.value) || 0;
+    setPrecoChMadeirado(valorChmMadeirado);
+    localStorage.setItem("precoChMadeirado", precoChMadeirado);
+  };
+  return {
+    precoChMadeirado,
+    setValorChMadeirado,
+  };
+}
+export function makeHook17() {
+  const [precoChFundo, setprecoChFundo] = useState(""); // Armazena o valor do radio
+  const setValorChFundo = (e) => {
+    const valorChfundo = parseFloat(e.target.value) || 0;
+    setprecoChFundo(valorChfundo);
+    localStorage.setItem("precoChFundo", precoChFundo);
+  };
+  return {
+    precoChFundo,
+    setValorChFundo,
+  };
+}
+export function makeHook18() {
+  const [precoTomada, setprecoTomada] = useState(""); // Armazena o valor do radio
+  const setValorCxTomada = (e) => {
+    const valorCxTomada = parseFloat(e.target.value) || 0;
+    setprecoTomada(valorCxTomada);
+    localStorage.setItem("precoTomada", precoTomada);
+  };
+  return {
+    precoTomada,
+    setValorCxTomada,
+  };
+}
+export function makeHook19() {
+  const [precoPassaFio, setprecoPassaFio] = useState(""); // Armazena o valor do radio
+  const setValorPassaFio = (e) => {
+    const valorPassaFio = parseFloat(e.target.value) || 0;
+    setprecoPassaFio(valorPassaFio);
+    localStorage.setItem("precoPassaFio", precoPassaFio);
+  };
+  return {
+    precoPassaFio,
+    setValorPassaFio,
+  };
+}
+export function makeHook20() {
+  const [precoFitaBorda, setprecoFitaBorda] = useState(""); // Armazena o valor do radio
+  const setValorFitaBorda = (e) => {
+    const valorFitaBorda = parseFloat(e.target.value) || 0;
+    setprecoFitaBorda(valorFitaBorda);
+    localStorage.setItem("precoFitaBorda", precoFitaBorda);
+  };
+  return {
+    precoFitaBorda,
+    setValorFitaBorda,
+  };
+}
+export function makeHook21() {
+  const [precoFitaLed, setprecoFitaLed] = useState(""); // Armazena o valor do radio
+  const setValorFitaLed = (e) => {
+    const valorFitaLed = parseFloat(e.target.value) || 0;
+    setprecoFitaLed(valorFitaLed);
+    localStorage.setItem("precoFitaLed", precoFitaLed);
+  };
+  return {
+    precoFitaLed,
+    setValorFitaLed,
+  };
+}
+export function makeHook22() {
+  const [precoFioEletrico, setprecoFioEletrico] = useState(""); // Armazena o valor do radio
+  const setValorFioEletrico = (e) => {
+    const valorFioEletrico = parseFloat(e.target.value) || 0;
+    setprecoFioEletrico(valorFioEletrico);
+    localStorage.setItem("precoFioEletrico", precoFioEletrico);
+  };
+  return {
+    precoFioEletrico,
+    setValorFioEletrico,
+  };
+}
