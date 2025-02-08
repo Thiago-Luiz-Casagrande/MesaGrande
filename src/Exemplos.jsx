@@ -24,6 +24,14 @@ function Exemplos() {
         <img src="./src/Images/Cliente2/ClienteCintia4.jpg" id="imagemMesa" />
         <br />
       </div>
+      <div className="cliente1">
+        <h2>Cliente: Luís</h2> <h2>Cidade: Bal. Camboriú</h2>
+        <img src="./src/Images/Cliente3/ImagemLuiz1.jpg" id="imagemMesa" />
+        <img src="./src/Images/Cliente3/ImagemLuiz2.jpg" id="imagemMesa" />
+        <img src="./src/Images/Cliente3/ImagemLuiz3.jpg" id="imagemMesa" />
+        <img src="./src/Images/Cliente3/ImagemLuiz4.jpg" id="imagemMesa" />
+        <br />
+      </div>
     </div>
   );
 }
