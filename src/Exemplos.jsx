@@ -32,6 +32,13 @@ function Exemplos() {
         <img src="./src/Images/Cliente3/ImagemLuiz4.jpg" id="imagemMesa" />
         <br />
       </div>
+      <div className="cliente1">
+        <h2>Cliente: Jean</h2> <h2>Cidade: Bal. Piçarras</h2>
+        <img src="./src/Images/Cliente4/imagemJean1.jpg" id="imagemMesa" />
+        <img src="./src/Images/Cliente4/imagemJean2.jpg" id="imagemMesa" />
+        <img src="./src/Images/Cliente4/imagemJean3.jpg" id="imagemMesa" />
+        <br />
+      </div>
     </div>
   );
 }
