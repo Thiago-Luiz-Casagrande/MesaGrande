@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Principal from "./principal";
 import AdminPage from "./AdminPage";
 import Exemplos from "./Exemplos";
+import SobreNos from "./SobreNos";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/exemplos",
     element: <Exemplos />,
+  },
+  {
+    path: "/sobreNos",
+    element: <SobreNos />,
   },
 ]);
 

@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import "./Exemplos.css";
+import Footer from "./Footer";
 
 function Exemplos() {
   return (
@@ -39,6 +40,7 @@ function Exemplos() {
         <img src="./src/Images/Cliente4/imagemJean3.jpg" id="imagemMesa" />
         <br />
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,29 @@
+.titleDescription {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding-top: 10vw;
+  text-align: center;
+}
+
+.myDescription {
+  font-family: "Times New Roman", Times, serif;
+  margin: 3vw 10vw;
+  width: 40vw;
+  display: flex;
+  float: left;
+  font-size: larger;
+}
+#imgPerfil {
+  padding: 4vw 10vw;
+}
+.bloco {
+  display: block;
+}
+.bloco2 {
+  display: flex;
+  float: right;
+}
+#imgFrete {
+  height: 30vw;
+  display: flex;
+  float: left;
+}
