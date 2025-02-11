@@ -1,4 +1,6 @@
 import "./Footer.css";
+import WhatsAppButton from "./WhatsAppButton";
+import InstagramButton from "./InstagramButton";
 
 function Footer() {
   return (
@@ -10,13 +12,15 @@ function Footer() {
           width={30}
           className="simboloRedes"
         />
-        <p className="simbolosRedes espaco">Whatsapp</p>
+        <WhatsAppButton />
+        <p className="simbolosRedes espaco"></p>
         <img
           src="src/Images/logoInstagram.png"
           width={30}
           className="simboloRedes"
         />
-        <p className="simbolosRedes">Instagram</p>
+        <InstagramButton />
+        <p className="simbolosRedes"></p>
       </div>
       <div className="textFooter">
         <h3>Nossas dados</h3>
