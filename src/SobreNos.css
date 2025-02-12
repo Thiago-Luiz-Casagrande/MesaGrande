@@ -5,12 +5,23 @@
 }
 
 .myDescription {
+  background-color: rgb(78, 78, 78);
+  color: goldenrod;
+  padding: 2vw;
+  border-radius: 20px;
   font-family: "Times New Roman", Times, serif;
-  margin: 3vw 10vw;
+  margin: 3vw 10vw 1vw;
   width: 40vw;
   display: flex;
   float: left;
   font-size: larger;
+  font-weight: bolder;
+}
+.topNull {
+  margin-top: 0vw;
+}
+.alingText {
+  height: 45vh;
 }
 #imgPerfil {
   padding: 4vw 10vw;
