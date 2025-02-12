@@ -1,10 +1,10 @@
-import Header from "./components/Header.jsx";
-import Calculadora from "./Calculadora.jsx";
-import Painel from "./Painel.jsx";
-import Fpagamento from "./Fpagamento.jsx";
-import Footer from "./Footer.jsx";
-import Depoimentos from "./Depoimentos.jsx";
-import App from "./App.jsx";
+import Header from "./components/Header";
+import Calculadora from "./Calculadora";
+import Painel from "./Painel";
+import Fpagamento from "./Fpagamento";
+import Footer from "./Footer";
+import Depoimentos from "./Depoimentos";
+import App from "./App";
 
 function Principal() {
   return (
