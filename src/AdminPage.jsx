@@ -2,17 +2,15 @@ import Header from "./components/Header";
 import "./AdminPage.css";
 import { useState } from "react";
 import React from "react";
-import {
-  MakeHook14,
-  MakeHook15,
-  MakeHook16,
-  MakeHook17,
-  MakeHook18,
-  MakeHook19,
-  MakeHook20,
-  MakeHook21,
-  MakeHook22,
-} from "./MakeHook";
+import { MakeHook14 } from "./MakeHookTable";
+import { MakeHook15 } from "./MakeHookTable";
+import { MakeHook16 } from "./MakeHookTable";
+import { MakeHook17 } from "./MakeHookTable";
+import { MakeHook18 } from "./MakeHookTable";
+import { MakeHook19 } from "./MakeHookTable";
+import { MakeHook20 } from "./MakeHookTable";
+import { MakeHook21 } from "./MakeHookTable";
+import { MakeHook22 } from "./MakeHookTable";
 
 function AdminPage() {
   const { precoChBranco, setValorChBranca } = MakeHook14();

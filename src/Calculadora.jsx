@@ -16,7 +16,7 @@ import {
   MakeHook11,
   MakeHook12,
   MakeHook13,
-} from "./MakeHook.jsx";
+} from "./MakeHookTable.jsx";
 
 function Calculadora() {
   const [branco, setBranco] = useState("Branco");
