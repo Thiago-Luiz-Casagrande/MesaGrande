@@ -3,27 +3,27 @@ import "./AdminPage.css";
 import { useState } from "react";
 import React from "react";
 import {
-  makeHook14,
-  makeHook15,
-  makeHook16,
-  makeHook17,
-  makeHook18,
-  makeHook19,
-  makeHook20,
-  makeHook21,
-  makeHook22,
+  MakeHook14,
+  MakeHook15,
+  MakeHook16,
+  MakeHook17,
+  MakeHook18,
+  MakeHook19,
+  MakeHook20,
+  MakeHook21,
+  MakeHook22,
 } from "./MakeHook";
 
 function AdminPage() {
-  const { precoChBranco, setValorChBranca } = makeHook14();
-  const { precoChSolido, setValorChSolido } = makeHook15();
-  const { precoChMadeirado, setValorChMadeirado } = makeHook16();
-  const { precoChFundo, setValorChFundo } = makeHook17();
-  const { precoTomada, setValorCxTomada } = makeHook18();
-  const { precoPassaFio, setValorPassaFio } = makeHook19();
-  const { precoFitaBorda, setValorFitaBorda } = makeHook20();
-  const { precoFitaLed, setValorFitaLed } = makeHook21();
-  const { precoFioEletrico, setValorFioEletrico } = makeHook22();
+  const { precoChBranco, setValorChBranca } = MakeHook14();
+  const { precoChSolido, setValorChSolido } = MakeHook15();
+  const { precoChMadeirado, setValorChMadeirado } = MakeHook16();
+  const { precoChFundo, setValorChFundo } = MakeHook17();
+  const { precoTomada, setValorCxTomada } = MakeHook18();
+  const { precoPassaFio, setValorPassaFio } = MakeHook19();
+  const { precoFitaBorda, setValorFitaBorda } = MakeHook20();
+  const { precoFitaLed, setValorFitaLed } = MakeHook21();
+  const { precoFioEletrico, setValorFioEletrico } = MakeHook22();
 
   // function atualizaPrecos() {
   //   console.log(precoChBranco);
