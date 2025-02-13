@@ -3,19 +3,19 @@ import CheckboxColor from "./CheckboxColor.jsx";
 import "./Calculadora.css";
 
 import {
-  makeHook1,
-  makeHook2,
-  makeHook3,
-  makeHook4,
-  makeHook5,
-  makeHook6,
-  makeHook7,
-  makeHook8,
-  makeHook9,
-  makeHook10,
-  makeHook11,
-  makeHook12,
-  makeHook13,
+  MakeHook1,
+  MakeHook2,
+  MakeHook3,
+  MakeHook4,
+  MakeHook5,
+  MakeHook6,
+  MakeHook7,
+  MakeHook8,
+  MakeHook9,
+  MakeHook10,
+  MakeHook11,
+  MakeHook12,
+  MakeHook13,
 } from "./MakeHook.jsx";
 
 function Calculadora() {
@@ -23,19 +23,19 @@ function Calculadora() {
   const [solido, setSolido] = useState("Sólido");
   const [madeirado, setMadeirado] = useState("Madeirado");
 
-  const { selectPes, coresPes } = makeHook1();
-  const { selectTampo, coresTampo } = makeHook2();
-  const { selectEnergia, tipoEnergia } = makeHook3();
-  const { showSemPainel, checkSemPainel } = makeHook4();
-  const { selectPainel, corPainel } = makeHook5();
-  const { showFitaLed, checkFitaLed } = makeHook6();
-  const { showMontagem, checkMontagem } = makeHook7();
-  const { showFrete, checkfrete } = makeHook8();
-  const { distDestino, handleChange } = makeHook9();
-  const { largura, tamanhoLargura } = makeHook10();
-  const { comprimento, tamanhoComprimento } = makeHook11();
-  const { showSemEnergia, checkSemEnergia } = makeHook12();
-  const { showTamRef, checkTamRef } = makeHook13();
+  const { selectPes, coresPes } = MakeHook1();
+  const { selectTampo, coresTampo } = MakeHook2();
+  const { selectEnergia, tipoEnergia } = MakeHook3();
+  const { showSemPainel, checkSemPainel } = MakeHook4();
+  const { selectPainel, corPainel } = MakeHook5();
+  const { showFitaLed, checkFitaLed } = MakeHook6();
+  const { showMontagem, checkMontagem } = MakeHook7();
+  const { showFrete, checkfrete } = MakeHook8();
+  const { distDestino, handleChange } = MakeHook9();
+  const { largura, tamanhoLargura } = MakeHook10();
+  const { comprimento, tamanhoComprimento } = MakeHook11();
+  const { showSemEnergia, checkSemEnergia } = MakeHook12();
+  const { showTamRef, checkTamRef } = MakeHook13();
 
   const [mostrarComponente, setMostrarComponente] = useState(false);
   var varCaixa = 0;

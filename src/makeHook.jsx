@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function makeHook1() {
+export function MakeHook1() {
   const [selectPes, setSelectPes] = useState(""); // Correto: useState dentro da função
   const coresPes = (e) => {
     setSelectPes(e.target.value); // Atualiza o estado com o valor do rádio selecionado
@@ -10,7 +10,7 @@ export function makeHook1() {
     coresPes,
   };
 }
-export function makeHook2() {
+export function MakeHook2() {
   const [selectTampo, setSelectTampo] = useState(""); // Correto: useState dentro da função
   const coresTampo = (e) => {
     setSelectTampo(e.target.value); // Atualiza o estado com o valor do rádio selecionado
@@ -20,7 +20,7 @@ export function makeHook2() {
     coresTampo,
   };
 }
-export function makeHook3() {
+export function MakeHook3() {
   const [selectEnergia, setselectEnergia] = useState(""); // Correto: useState dentro da função
   const tipoEnergia = (e) => {
     setselectEnergia(e.target.value); // Atualiza o estado com o valor do rádio selecionado
@@ -30,7 +30,7 @@ export function makeHook3() {
     tipoEnergia,
   };
 }
-export function makeHook4() {
+export function MakeHook4() {
   const [showSemPainel, setShowSemPainel] = useState(false); // Correto: useState dentro da função
   const checkSemPainel = (e) => {
     setShowSemPainel(e.target.value); // Atualiza o estado com o valor do rádio selecionado
@@ -40,7 +40,7 @@ export function makeHook4() {
     checkSemPainel,
   };
 }
-export function makeHook5() {
+export function MakeHook5() {
   const [selectPainel, setSelectPainel] = useState(""); // Armazena o valor do radio
   const corPainel = (e) => {
     setSelectPainel(e.target.value); // Atualiza o estado com o valor do rádio selecionado
@@ -50,7 +50,7 @@ export function makeHook5() {
     corPainel,
   };
 }
-export function makeHook6() {
+export function MakeHook6() {
   const [showFitaLed, setShowFitaLed] = useState(false); // Estado para controlar a exibição da div
   const checkFitaLed = (e) => {
     setShowFitaLed(e.target.checked);
@@ -60,7 +60,7 @@ export function makeHook6() {
     checkFitaLed,
   };
 }
-export function makeHook7() {
+export function MakeHook7() {
   const [showMontagem, setShowMontagem] = useState(false); // Estado para controlar a exibição da div
   const checkMontagem = (e) => {
     setShowMontagem(e.target.checked);
@@ -70,7 +70,7 @@ export function makeHook7() {
     checkMontagem,
   };
 }
-export function makeHook8() {
+export function MakeHook8() {
   const [showFrete, setShowFrete] = useState(false); // Estado para controlar a exibição da div
   const checkfrete = (e) => {
     setShowFrete(e.target.checked);
@@ -80,7 +80,7 @@ export function makeHook8() {
     checkfrete,
   };
 }
-export function makeHook9() {
+export function MakeHook9() {
   const [distDestino, setdistDestino] = useState(""); // Armazena o valor do radio
   const handleChange = (e) => {
     const distancia = parseFloat(e.target.value) || 0;
@@ -91,7 +91,7 @@ export function makeHook9() {
     handleChange,
   };
 }
-export function makeHook10() {
+export function MakeHook10() {
   const [largura, setLargura] = useState(""); // Armazena o valor do radio
   const tamanhoLargura = (e) => {
     const tamLargura = parseFloat(e.target.value) || 0;
@@ -102,7 +102,7 @@ export function makeHook10() {
     tamanhoLargura,
   };
 }
-export function makeHook11() {
+export function MakeHook11() {
   const [comprimento, setComprimento] = useState(""); // Armazena o valor do radio
   const tamanhoComprimento = (e) => {
     const tamComprimento = parseFloat(e.target.value) || 0;
@@ -113,7 +113,7 @@ export function makeHook11() {
     tamanhoComprimento,
   };
 }
-export function makeHook12() {
+export function MakeHook12() {
   const [showSemEnergia, setShowSemEnergia] = useState(false); // Armazena o valor do radio
   const checkSemEnergia = (e) => {
     setShowSemEnergia(e.target.value);
@@ -123,7 +123,7 @@ export function makeHook12() {
     checkSemEnergia,
   };
 }
-export function makeHook13() {
+export function MakeHook13() {
   const [showTamRef, setshowTamRef] = useState(false); // Armazena o valor do radio
   const checkTamRef = (e) => {
     setshowTamRef(e.target.value);
