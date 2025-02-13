@@ -18,12 +18,7 @@ function Header() {
   };
   return (
     <div className="header">
-      <img
-        src="src/Images/logo-marca.png"
-        alt="Logo da Marca"
-        width={200}
-        onClick={goToExamples1}
-      />
+      <img src="/Images/logo-marca.png" width={200} onClick={goToExamples1} />
       <div className="headerordem">
         <p className="headerHeader" onClick={goToExamples2}>
           Exemplos

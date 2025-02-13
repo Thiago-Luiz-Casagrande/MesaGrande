@@ -21,11 +21,11 @@ function SobreNos() {
         <p className="myDescription topNull">
           Vamos criar algo incrível juntos!
         </p>
-        <img src="src/Images/imgPerfil.png" alt="" id="imgPerfil" />
+        <img src="/Images/imgPerfil.png" alt="" id="imgPerfil" />
       </div>
       <h1 className="titleDescription">Área de atuação</h1>
       <div className="bloco2">
-        <img src="src/Images/imgFrete.png" id="imgFrete" />
+        <img src="/Images/imgFrete.png" id="imgFrete" />
         <p className="myDescription alingText">
           Atendemos clientes em todo o litoral norte de Santa Catarina,
           oferecendo móveis sob medida com qualidade e design diferenciado.

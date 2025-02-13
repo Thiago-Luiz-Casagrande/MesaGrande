@@ -6,7 +6,7 @@ function App() {
       <p className="espassamento"></p>
       <img
         className="imagemEntrada"
-        src="src/Images/imagemEntrada.png"
+        src="/Images/imagemEntrada.png"
         width={1270}
       />
       <h1 className=""></h1>

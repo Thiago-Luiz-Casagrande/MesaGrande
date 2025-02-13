@@ -5,17 +5,17 @@ import InstagramButton from "./InstagramButton";
 function Footer() {
   return (
     <div className="boxFooter">
-      <img src="src/Images/logo-marca.png" alt="" width={180} id="logoFooter" />
+      <img src="/Images/logo-marca.png" alt="" width={180} id="logoFooter" />
       <div className="linkRedes">
         <img
-          src="src/Images/logoWhatsapp.png"
+          src="/Images/logoWhatsapp.png"
           width={30}
           className="simboloRedes"
         />
         <WhatsAppButton />
         <p className="simbolosRedes espaco"></p>
         <img
-          src="src/Images/logoInstagram.png"
+          src="/Images/logoInstagram.png"
           width={30}
           className="simboloRedes"
         />

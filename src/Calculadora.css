@@ -2,7 +2,7 @@
   width: 85vw;
   height: 130vh;
 
-  background-image: url("src/Images/imagemFundo.png"); /* Caminho da imagem */
+  background-image: url("/Images/imagemFundo.png"); /* Caminho da imagem */
   background-size: cover; /* Faz a imagem cobrir toda a área */
   background-repeat: no-repeat; /* Evita repetição */
   background-position: center; /* Centraliza a imagem */
