@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/exe(.*)",
-      "destination": "/exemplos.jsx"
-    }
-  ]
-}

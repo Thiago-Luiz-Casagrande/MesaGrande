@@ -1,8 +1,15 @@
 import Header from "./components/Header";
 import "./SobreNos.css";
 import Footer from "./Footer";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function SobreNos() {
+  const navigate = useNavigate();
+  const goToExamples4 = () => {
+    window.scrollTo(0, 0); // Reseta o scroll para o topo
+    navigate("/admin"); // Faz a navegação
+  };
+
   return (
     <div>
       <Header />
@@ -23,7 +30,9 @@ function SobreNos() {
         </p>
         <img src="/Images/imgPerfil.png" alt="" id="imgPerfil" />
       </div>
-      <h1 className="titleDescription">Área de atuação</h1>
+      <h1 className="titleDescription" onClick={goToExamples4}>
+        Área de atuação
+      </h1>
       <div className="bloco2">
         <img src="/Images/imgFrete.png" id="imgFrete" />
         <p className="myDescription alingText">
