@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import "./Exemplos.css";
-import Footer from "./Footer";
+import Footer from "./Footer/Footer";
 
 function Exemplos() {
   return (

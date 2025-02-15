@@ -1,8 +1,24 @@
-import "./Footer.css";
-import WhatsAppButton from "./WhatsAppButton";
-import InstagramButton from "./InstagramButton";
+// import "./Footer.css";
+import WhatsAppButton from "../WhatsAppButton";
+import InstagramButton from "../InstagramButton";
+import { useState, useEffect } from "react";
 
 function Footer() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+
+    import(isMobile ? "./MFooter.css" : "./DFooter.css")
+      .then(() =>
+        console.log("CSS carregado:", isMobile ? "mobile.css" : "desktop.css")
+      )
+      .catch((error) => console.error("Erro ao carregar CSS:", error));
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMobile]);
+
   return (
     <div className="boxFooter">
       <img src="/Images/logo-marca.png" alt="" width={180} id="logoFooter" />

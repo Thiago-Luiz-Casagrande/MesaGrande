@@ -1,0 +1,36 @@
+.boxFooter {
+    width: 100%;
+    height: 11vw;
+    background-color: rgb(212, 212, 212);
+    box-shadow: 0 -2px 5px rgb(0, 0, 0, 0.5);
+    display: flex;
+    float: left;
+  }
+  #logoFooter {
+    padding-top: 2vw;
+    margin: 0 15vw 2.5vw 4vw;
+  }
+  .linkRedes {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin-top: 3.5vw;
+    height: 2vw;
+    width: 40vw;
+    display: flex;
+    float: right;
+  }
+  .simbolosRedes {
+    font-size: medium;
+    margin-left: 7px;
+    cursor: pointer;
+  }
+  .espaco {
+    margin-right: 4vw;
+  }
+  .textFooter {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    height: 80%;
+    margin-top: 1vw;
+    width: 25%;
+    text-align: right;
+  }
+  

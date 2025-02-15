@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import Calculadora from "./Calculadora";
 import Painel from "./Painel";
 import Fpagamento from "./Fpagamento";
-import Footer from "./Footer";
+import Footer from "./Footer/Footer";
 import Depoimentos from "./Depoimentos";
 import App from "./App";
 

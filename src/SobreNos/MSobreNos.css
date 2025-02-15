@@ -1,0 +1,44 @@
+body {
+  background-color: rgb(189, 189, 189);
+}
+
+.titleDescription {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: x-large;
+  padding-top: 50vw;
+  margin-left: 45%;
+  width: 100%;
+}
+
+.myDescription {
+  background-color: rgb(78, 78, 78);
+  color: goldenrod;
+  padding: 10vw;
+  border-radius: 20px;
+  font-family: "Times New Roman", Times, serif;
+  margin: 13vw 0vw 1vw 10vw;
+  font-size: larger;
+  font-weight: bolder;
+}
+.topNull {
+  margin-top: 0vw;
+}
+.alingText {
+  height: 90vh;
+  width: 150vw;
+  margin-bottom: 20vw;
+}
+#imgPerfil {
+  height: 50vh;
+  padding: 10vw 0vw 0 30vw;
+}
+.bloco {
+  width: 150vw;
+  padding-left: 10vw;
+}
+.bloco2 {
+}
+#imgFrete {
+  height: 100vw;
+  padding: 10vw 0vw 0 60vw;
+}

@@ -1,14 +1,30 @@
-import Header from "./components/Header";
-import "./SobreNos.css";
-import Footer from "./Footer";
+import Header from "../components/Header";
+// import "./SobreNos.css";
+import Footer from "../Footer/Footer";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function SobreNos() {
   const navigate = useNavigate();
+
   const goToExamples4 = () => {
-    window.scrollTo(0, 0); // Reseta o scroll para o topo
     navigate("/admin"); // Faz a navegação
   };
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+
+    import(isMobile ? "./MSobreNos.css" : "./DSobreNos.css")
+      .then(() =>
+        console.log("CSS carregado:", isMobile ? "mobile.css" : "desktop.css")
+      )
+      .catch((error) => console.error("Erro ao carregar CSS:", error));
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMobile]);
 
   return (
     <div>
