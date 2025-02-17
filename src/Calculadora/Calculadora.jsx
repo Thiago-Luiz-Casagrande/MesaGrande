@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import CheckboxColor from "./CheckboxColor.jsx";
-import "./Calculadora.css";
+import { useState, useEffect } from "react";
+import CheckboxColor from "../CheckboxColor";
 
 import {
   MakeHook1,
@@ -16,9 +15,24 @@ import {
   MakeHook11,
   MakeHook12,
   MakeHook13,
-} from "./MakeHookTable.jsx";
+} from "../MakeHookTable";
 
 function Calculadora() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+
+    import(isMobile ? "./MCalculadora.css" : "./DCalculadora.css")
+      .then(() =>
+        console.log("CSS carregado:", isMobile ? "mobile.css" : "desktop.css")
+      )
+      .catch((error) => console.error("Erro ao carregar CSS:", error));
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMobile]);
+
   const [branco, setBranco] = useState("Branco");
   const [solido, setSolido] = useState("Sólido");
   const [madeirado, setMadeirado] = useState("Madeirado");

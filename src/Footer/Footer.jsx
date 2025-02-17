@@ -42,7 +42,6 @@ function Footer() {
         <h3>Nossas dados</h3>
         <p>Endereço: Rua Ana Moser 123, Pacincia, Itajaí, SC</p>
         <p>CNPJ: 58.367.476/0001-45</p>
-        <p>Instagram:</p>
         <p>Email: thiagocasagrande2004@gmail.com</p>
       </div>
     </div>

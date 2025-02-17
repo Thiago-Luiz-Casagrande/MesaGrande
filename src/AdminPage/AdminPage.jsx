@@ -1,5 +1,5 @@
-import Header from "../components/Header";
-import "./AdminPage.css";
+import Header from "../Header/Header";
+import "./DAdminPage.css";
 import { useState } from "react";
 import React from "react";
 import { MakeHook14 } from "../MakeHookTable";

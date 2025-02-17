@@ -8,18 +8,18 @@
 }
 #logoFooter {
   padding-top: 2vw;
-  margin: 0 15vw 2.5vw 4vw;
+  margin: 5vh 0vw 5vw 0vw;
 }
 .linkRedes {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin-top: 3.5vw;
   height: 2vw;
-  width: 40vw;
+  width: 35vw;
   display: flex;
-  float: right;
+  flex-direction: column;
 }
 .simbolosRedes {
-  font-size: medium;
+  font-size: 20vw;
   margin-left: 7px;
   cursor: pointer;
 }
@@ -28,8 +28,9 @@
 }
 .textFooter {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  height: 80%;
-  margin-top: 1vw;
-  width: 25%;
+  height: 90%;
+  margin: 1vw 1vw 0 0;
+  width: 35%;
   text-align: right;
+  font-size: 13px;
 }
