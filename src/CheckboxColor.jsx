@@ -1,4 +1,4 @@
-import "./Calculadora.css";
+import "./Calculadora/DCalculadora.css";
 
 function CheckboxColor(props) {
   const checkboxes = document.querySelectorAll(".checkbox");
