@@ -1,7 +1,7 @@
 .header {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   display: flex;
-  width: 100vw;
+  width: 70%;
   height: 80px;
   border-bottom: solid gray;
   align-items: center; /* Alinha verticalmente ao centro */

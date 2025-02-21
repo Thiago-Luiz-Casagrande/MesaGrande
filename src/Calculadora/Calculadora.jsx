@@ -33,6 +33,8 @@ function Calculadora() {
     return () => window.removeEventListener("resize", handleResize);
   }, [isMobile]);
 
+  // forms
+
   const [branco, setBranco] = useState("Branco");
   const [solido, setSolido] = useState("Sólido");
   const [madeirado, setMadeirado] = useState("Madeirado");
