@@ -56,6 +56,7 @@ function Calculadora() {
   const [mostrarComponente, setMostrarComponente] = useState(false);
   var varCaixa = 0;
   let extras = 0;
+
   const handleClick = () => {
     setMostrarComponente(true); // Atualiza o estado para mostrar o componente
 
