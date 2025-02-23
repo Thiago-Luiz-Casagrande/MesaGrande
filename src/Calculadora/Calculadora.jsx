@@ -54,6 +54,7 @@ function Calculadora() {
   const { showTamRef, checkTamRef } = MakeHook13();
 
   const [mostrarComponente, setMostrarComponente] = useState(false);
+
   var varCaixa = 0;
   let extras = 0;
 
