@@ -35,6 +35,7 @@ function Calculadora() {
   }, [isMobile]);
 
   //iniciar React hook form
+  const { register } = useForm();
 
   const [branco, setBranco] = useState("Branco");
   const [solido, setSolido] = useState("Sólido");
@@ -172,20 +173,25 @@ function Calculadora() {
     console.log(varCaixa);
     return formatarValor(varCaixa);
   };
+
+  const onSubmit = () => {};
   return (
     <div className="bigbox">
       <h2 className="titleBox">Central de Personalização</h2>
       <div className="textbox">
         <div className="selectColor">
           <p className="chackbox">Cores dos pés:</p>
-          <CheckboxColor
+          <label>Branco</label>
+          <input type="radio" {...register()} />
+
+          {/* <CheckboxColor
             title={branco}
             id="1"
             name="pes"
             value={branco}
             type="radio"
             onChange={coresPes}
-          />
+          /> */}
           <CheckboxColor
             title={solido}
             id="2"
