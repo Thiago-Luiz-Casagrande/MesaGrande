@@ -34,7 +34,7 @@ function Calculadora() {
     return () => window.removeEventListener("resize", handleResize);
   }, [isMobile]);
 
-  // fazer forms React hook form
+  //iniciar React hook form
 
   const [branco, setBranco] = useState("Branco");
   const [solido, setSolido] = useState("Sólido");
