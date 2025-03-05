@@ -1,5 +1,5 @@
+import { useForm } from "react-hook-form";
 import "./Calculadora/DCalculadora.css";
-
 function CheckboxColor(props) {
   const checkboxes = document.querySelectorAll(".checkbox");
 

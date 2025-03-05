@@ -35,7 +35,7 @@ function Calculadora() {
   }, [isMobile]);
 
   //iniciar React hook form
-  const { register } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const [branco, setBranco] = useState("Branco");
   const [solido, setSolido] = useState("Sólido");
@@ -174,7 +174,9 @@ function Calculadora() {
     return formatarValor(varCaixa);
   };
 
-  const onSubmit = () => {};
+  const onSubmit = (data) => {
+    console.log(data);
+  };
   return (
     <div className="bigbox">
       <h2 className="titleBox">Central de Personalização</h2>
@@ -182,7 +184,7 @@ function Calculadora() {
         <div className="selectColor">
           <p className="chackbox">Cores dos pés:</p>
           <label>Branco</label>
-          <input type="radio" {...register()} />
+          <input type="radio" {...register("tampoB")} />
 
           {/* <CheckboxColor
             title={branco}
@@ -192,22 +194,26 @@ function Calculadora() {
             type="radio"
             onChange={coresPes}
           /> */}
-          <CheckboxColor
+          <label>Solido</label>
+          <input type="radio" {...register("tampoS")} />
+          {/* <CheckboxColor
             title={solido}
             id="2"
             name="pes"
             value={solido}
             type="radio"
             onChange={coresPes}
-          />
-          <CheckboxColor
+          /> */}
+          <label>Madeirado</label>
+          <input type="radio" {...register("tampoM")} />
+          {/* <CheckboxColor
             title={madeirado}
             id="3"
             name="pes"
             value={madeirado}
             type="radio"
             onChange={coresPes}
-          />
+          /> */}
         </div>
         <div className="selectColor">
           <p className="chackbox">Cores do tampo:</p>
@@ -357,7 +363,10 @@ function Calculadora() {
           />
         </div>
         <div className="calcular">
-          <button className="buttonCalcular" onClick={handleClick}>
+          <button
+            className="buttonCalcular"
+            onClick={() => handleSubmit(onSubmit)()}
+          >
             Calcular
           </button>
           <p className="precoFinal">
