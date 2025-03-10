@@ -35,7 +35,11 @@ function Calculadora() {
   }, [isMobile]);
 
   //iniciar React hook form
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const [branco, setBranco] = useState("Branco");
   const [solido, setSolido] = useState("Sólido");
@@ -170,9 +174,11 @@ function Calculadora() {
         currency: "BRL",
       });
     };
-    console.log(varCaixa);
+    //console.log(varCaixa);
     return formatarValor(varCaixa);
   };
+
+  console.log({ errors });
 
   const onSubmit = (data) => {
     console.log(data);
@@ -183,131 +189,70 @@ function Calculadora() {
       <div className="textbox">
         <div className="selectColor">
           <p className="chackbox">Cores dos pés:</p>
-          <label>Branco</label>
-          <input type="radio" {...register("tampoB")} />
 
-          {/* <CheckboxColor
-            title={branco}
-            id="1"
-            name="pes"
-            value={branco}
-            type="radio"
-            onChange={coresPes}
-          /> */}
-          <label>Solido</label>
-          <input type="radio" {...register("tampoS")} />
-          {/* <CheckboxColor
-            title={solido}
-            id="2"
-            name="pes"
-            value={solido}
-            type="radio"
-            onChange={coresPes}
-          /> */}
-          <label>Madeirado</label>
-          <input type="radio" {...register("tampoM")} />
-          {/* <CheckboxColor
-            title={madeirado}
-            id="3"
-            name="pes"
-            value={madeirado}
-            type="radio"
-            onChange={coresPes}
-          /> */}
+          <select
+            defaultValue="0"
+            className={errors?.pes && "input-error"}
+            {...register("pes", { validate: (value) => value !== "0" })}
+          >
+            <option value="0">Escolha as opões</option>
+            <option value="branco">{branco}</option>
+            <option value="solido">{solido}</option>
+            <option value="madeirado">{madeirado}</option>
+          </select>
+
+          {errors?.pes?.type === "validate" && (
+            <p className="error-message">Escolha uma opção</p>
+          )}
         </div>
         <div className="selectColor">
           <p className="chackbox">Cores do tampo:</p>
           <input type="checkbox" name="tamRef" id="4" onChange={checkTamRef} />
           <label htmlFor="tamRef">Tampo Reforçado</label>
           <br />
-          <CheckboxColor
-            title={branco}
-            id="5"
-            name="tampo"
-            type="radio"
-            value={branco}
-            onChange={coresTampo}
-          />
-          <CheckboxColor
-            title={solido}
-            id="6"
-            name="tampo"
-            type="radio"
-            value={solido}
-            onChange={coresTampo}
-          />
-          <CheckboxColor
-            title={madeirado}
-            id="7"
-            name="tampo"
-            type="radio"
-            value={madeirado}
-            onChange={coresTampo}
-          />
+          <select
+            defaultValue="0"
+            {...register("tampo", { validate: (value) => value !== "0" })}
+          >
+            <option value="0">Escolha as opões</option>
+            <option value="branco">{branco}</option>
+            <option value="solido">{solido}</option>
+            <option value="madeirado">{madeirado}</option>
+          </select>
+          {errors?.pes?.type === "validate" && (
+            <p className="error-message">Escolha uma opção</p>
+          )}
         </div>
         <br />
         <div className="selectColor">
           <p className="chackbox">Energia</p>
-          <input
-            type="checkbox"
-            name="sEnergia"
-            id="8"
-            onChange={checkSemEnergia}
-          />
-          <label htmlFor="sPainel">Sem Energia</label>
-          <br />
-          <CheckboxColor
-            title="Passa fio"
-            id="9"
-            name="energia"
-            type="radio"
-            value="PassaFio"
-            onChange={tipoEnergia}
-          />
-          <CheckboxColor
-            title="Caixa de tomadas"
-            id="10"
-            name="energia"
-            type="radio"
-            value="CaixaDeTomadas"
-            onChange={tipoEnergia}
-          />
+          <select
+            defaultValue="0"
+            {...register("energia", { validate: (value) => value !== "0" })}
+          >
+            <option value="0">Escolha as opões</option>
+            <option value="branco">Sem Energia</option>
+            <option value="solido">Passa Fio</option>
+            <option value="madeirado">Caixa de tomada</option>
+          </select>
+          {errors?.pes?.type === "validate" && (
+            <p className="error-message">Escolha uma opção</p>
+          )}
         </div>
         <br />
         <div className="selectColor">
           <p className="chackbox">Cores do painel: (opcional)</p>
-          <input
-            type="checkbox"
-            name="sPainel"
-            id="11"
-            onChange={checkSemPainel}
-          />
-          <label htmlFor="sPainel">Sem Painel</label>
+
           <br />
-          <CheckboxColor
-            title={branco}
-            id="12"
-            name="painel"
-            type="radio"
-            value={branco}
-            onChange={corPainel}
-          />
-          <CheckboxColor
-            title={solido}
-            id="13"
-            name="painel"
-            type="radio"
-            value={solido}
-            onChange={corPainel}
-          />
-          <CheckboxColor
-            title={madeirado}
-            id="12"
-            name="painel"
-            type="radio"
-            value={madeirado}
-            onChange={corPainel}
-          />
+          <select
+            defaultValue="0"
+            {...register("painel", { validate: (value) => value !== "0" })}
+          >
+            <option value="0">Sem Painel</option>
+            <option value="branco">{branco}</option>
+            <option value="solido">{solido}</option>
+            <option value="madeirado">{madeirado}</option>
+          </select>
           <CheckboxColor
             title="Fita LED"
             id="14"
@@ -352,6 +297,7 @@ function Calculadora() {
             value={largura}
             onChange={tamanhoLargura}
           />
+
           <br />
           <label htmlFor="comprimento">Comprimento (cm)</label>
           <input

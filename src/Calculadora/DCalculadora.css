@@ -96,3 +96,11 @@
   margin-left: 2vw;
   font-size: 2vw;
 }
+.input-error {
+  border: solid 2px red;
+}
+.error-message {
+  color: rgb(255, 72, 72);
+  font-size: 0.75rem;
+  margin-top: 8px;
+}
