@@ -182,6 +182,7 @@ function Calculadora() {
 
   const onSubmit = (data) => {
     console.log(data);
+    alert(data);
   };
   return (
     <div className="bigbox">
@@ -244,15 +245,13 @@ function Calculadora() {
           <p className="chackbox">Cores do painel: (opcional)</p>
 
           <br />
-          <select
-            defaultValue="0"
-            {...register("painel", { validate: (value) => value !== "0" })}
-          >
+          <select defaultValue="0" {...register("painel")}>
             <option value="0">Sem Painel</option>
             <option value="branco">{branco}</option>
             <option value="solido">{solido}</option>
             <option value="madeirado">{madeirado}</option>
           </select>
+
           <CheckboxColor
             title="Fita LED"
             id="14"
