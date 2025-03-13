@@ -220,25 +220,18 @@ function Calculadora() {
             <option value="solido">{solido}</option>
             <option value="madeirado">{madeirado}</option>
           </select>
-          {errors?.pes?.type === "validate" && (
+          {errors?.tampo?.type === "validate" && (
             <p className="error-message">Escolha uma opção</p>
           )}
         </div>
         <br />
         <div className="selectColor">
           <p className="chackbox">Energia</p>
-          <select
-            defaultValue="0"
-            {...register("energia", { validate: (value) => value !== "0" })}
-          >
-            <option value="0">Escolha as opões</option>
+          <select defaultValue="0" {...register("energia")}>
             <option value="branco">Sem Energia</option>
             <option value="solido">Passa Fio</option>
             <option value="madeirado">Caixa de tomada</option>
           </select>
-          {errors?.pes?.type === "validate" && (
-            <p className="error-message">Escolha uma opção</p>
-          )}
         </div>
         <br />
         <div className="selectColor">
@@ -295,7 +288,11 @@ function Calculadora() {
             step="10"
             value={largura}
             onChange={tamanhoLargura}
+            {...register("largura", { validate: (value) => value !== "0" })}
           />
+          {errors?.largura?.type === "validate" && (
+            <p className="error-message">Escolha uma opção</p>
+          )}
 
           <br />
           <label htmlFor="comprimento">Comprimento (cm)</label>
@@ -305,7 +302,11 @@ function Calculadora() {
             step="10"
             value={comprimento}
             onChange={tamanhoComprimento}
+            {...register("comprimento", { validate: (value) => value !== "0" })}
           />
+          {errors?.comprimento?.type === "validate" && (
+            <p className="error-message">Escolha uma opção</p>
+          )}
         </div>
         <div className="calcular">
           <button
@@ -314,6 +315,7 @@ function Calculadora() {
           >
             Calcular
           </button>
+
           <p className="precoFinal">
             Valor Total: {mostrarComponente ? teste() : teste()}
           </p>
