@@ -254,29 +254,38 @@ function Calculadora() {
           />
         </div>
         <br />
-        <CheckboxColor
-          title="Montagem"
-          id="15"
-          type="checkbox"
-          onChange={checkMontagem}
-        />
-        <CheckboxColor
-          title="Frete"
-          id="16"
-          onChange={checkfrete}
-          type="checkbox"
-        />
+        <div>
+          <label id="15" className="label">
+            Montagem
+          </label>
+          <div>
+            <input type="checkbox" name="montagem" {...register("montagem")} />
+          </div>
+        </div>
+        <div className="form-group">
+          <label id="16" className="label">
+            Frete
+          </label>
+          <div className="checkbox-group">
+            <input
+              type="checkbox"
+              name="frete"
+              {...register("frete", {
+                validate: (value) => value === true,
+              })}
+            />
+          </div>
+        </div>
         {}
         <div className="inputNumber">
-          <label htmlFor="frete" id="titleFrete">
-            Distância de Itajaí (km)
-          </label>
+          <label id="distancia">Distância de Itajaí (km)</label>
           <input
             type="number"
-            id="frete"
+            id="distancia"
             step="10"
             value={distDestino}
             onChange={handleChange}
+            {...register("distancia")}
           />
         </div>
         <h3 className="titleDimencoes">Dimenções</h3>
@@ -288,7 +297,7 @@ function Calculadora() {
             step="10"
             value={largura}
             onChange={tamanhoLargura}
-            {...register("largura", { validate: (value) => value !== "0" })}
+            {...register("largura", { validate: (value) => value !== 0 })}
           />
           {errors?.largura?.type === "validate" && (
             <p className="error-message">Escolha uma opção</p>
@@ -302,7 +311,7 @@ function Calculadora() {
             step="10"
             value={comprimento}
             onChange={tamanhoComprimento}
-            {...register("comprimento", { validate: (value) => value !== "0" })}
+            {...register("comprimento", { validate: (value) => value !== 0 })}
           />
           {errors?.comprimento?.type === "validate" && (
             <p className="error-message">Escolha uma opção</p>
