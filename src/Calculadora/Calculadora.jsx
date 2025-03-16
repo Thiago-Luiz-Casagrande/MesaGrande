@@ -297,12 +297,11 @@ function Calculadora() {
             step="10"
             value={largura}
             onChange={tamanhoLargura}
-            {...register("largura", { validate: (value) => value !== 0 })}
+            {...register("largura", { validate: (value) => value > 0 })}
           />
           {errors?.largura?.type === "validate" && (
             <p className="error-message">Escolha uma opção</p>
           )}
-
           <br />
           <label htmlFor="comprimento">Comprimento (cm)</label>
           <input
