@@ -283,7 +283,7 @@ function Calculadora() {
             type="number"
             id="distancia"
             step="10"
-            value={distDestino}
+            // value={distDestino}
             onChange={handleChange}
             {...register("distancia")}
           />
@@ -295,7 +295,7 @@ function Calculadora() {
             type="number"
             id="largura"
             step="10"
-            value={largura}
+            // value={largura}
             onChange={tamanhoLargura}
             {...register("largura", { validate: (value) => value > 0 })}
           />
@@ -308,7 +308,7 @@ function Calculadora() {
             type="number"
             id="comprimento"
             step="10"
-            value={comprimento}
+            // value={comprimento}
             onChange={tamanhoComprimento}
             {...register("comprimento", { validate: (value) => value !== 0 })}
           />
