@@ -38,6 +38,7 @@ function Calculadora() {
   const {
     register,
     handleSubmit,
+    getValues,
     formState: { errors },
   } = useForm();
 
@@ -182,6 +183,7 @@ function Calculadora() {
 
   const onSubmit = (data) => {
     console.log(data);
+    alert(getValues("tampo"));
     alert(data);
   };
   return (
@@ -190,7 +192,6 @@ function Calculadora() {
       <div className="textbox">
         <div className="selectColor">
           <p className="chackbox">Cores dos pés:</p>
-
           <select
             defaultValue="0"
             className={errors?.pes && "input-error"}
@@ -224,16 +225,14 @@ function Calculadora() {
             <p className="error-message">Escolha uma opção</p>
           )}
         </div>
-        <br />
         <div className="selectColor">
           <p className="chackbox">Energia</p>
           <select defaultValue="0" {...register("energia")}>
-            <option value="branco">Sem Energia</option>
-            <option value="solido">Passa Fio</option>
-            <option value="madeirado">Caixa de tomada</option>
+            <option value="sem Energia">Sem Energia</option>
+            <option value="Passa Fio">Passa Fio</option>
+            <option value="Caixa de tomada">Caixa de tomada</option>
           </select>
         </div>
-        <br />
         <div className="selectColor">
           <p className="chackbox">Cores do painel: (opcional)</p>
 
@@ -245,13 +244,25 @@ function Calculadora() {
             <option value="madeirado">{madeirado}</option>
           </select>
 
-          <CheckboxColor
+          {/* <CheckboxColor
             title="Fita LED"
             id="14"
             name="painel"
             type="checkbox"
             onChange={checkFitaLed}
-          />
+          /> */}
+          <br />
+          <br />
+          <div>
+            <label>Fita Led</label>
+            <input
+              type="checkbox"
+              name="fitaLed"
+              {...register("fitaLed", {
+                validate: (value) => value === true,
+              })}
+            />
+          </div>
         </div>
         <br />
         <div>
@@ -300,7 +311,7 @@ function Calculadora() {
             {...register("largura", { validate: (value) => value > 0 })}
           />
           {errors?.largura?.type === "validate" && (
-            <p className="error-message">Escolha uma opção</p>
+            <p className="error-message">Escolha um tamanho</p>
           )}
           <br />
           <label htmlFor="comprimento">Comprimento (cm)</label>
