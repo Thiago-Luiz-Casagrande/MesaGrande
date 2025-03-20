@@ -88,59 +88,18 @@ function Calculadora() {
     fioEletrico: Number(localStorage.getItem("precoFioEletrico")),
   };
 
-  let quantFita = 0;
-
-  const teste = () => {
-    varCaixa = 0;
-    if (showTamRef) {
-      varCaixa += valores.chFundo;
-      quantFita = 0.02 * largura + 0.02 * comprimento;
-      quantFita = quantFita * valores.fitaBorda;
-      varCaixa += quantFita;
-    }
-    if (comprimento < 350 || largura < 350) {
-      switch (selectPes) {
-        case "Branco":
-          varCaixa += valores.chBranco;
-          break;
-        case "Sólido":
-          varCaixa += valores.chSolido;
-          break;
-        case "Madeirado":
-          varCaixa += valores.chMadeirado;
-          break;
+  function calculo() {
+    const teste = () => {
+      varCaixa = 0;
+      if (showTamRef) {
+        varCaixa += valores.chFundo;
+        let quantFita =
+          0.02 * getValues("largura") + 0.02 * getValues("comprimento");
+        quantFita = quantFita * valores.fitaBorda;
+        varCaixa += quantFita;
       }
-      let calTampoMad = 1;
-      if (comprimento > 270 || largura > 270) {
-        calTampoMad = 2;
-      }
-      switch (selectTampo) {
-        case "Branco":
-          varCaixa += calTampoMad * valores.chBranco;
-          break;
-        case "Sólido":
-          varCaixa += calTampoMad * valores.chSolido;
-          break;
-        case "Madeirado":
-          varCaixa += calTampoMad * valores.chMadeirado;
-          break;
-      }
-      if (showSemEnergia) {
-        varCaixa += 0;
-      } else {
-        switch (selectEnergia) {
-          case "PassaFio":
-            varCaixa += valores.passaFio;
-            break;
-          case "CaixaDeTomadas":
-            varCaixa += valores.cxTomada;
-            break;
-        }
-      }
-      if (showSemPainel) {
-        varCaixa += 0;
-      } else {
-        switch (selectPainel) {
+      if (comprimento < 350 || largura < 350) {
+        switch (getValues("pes")) {
           case "Branco":
             varCaixa += valores.chBranco;
             break;
@@ -151,34 +110,75 @@ function Calculadora() {
             varCaixa += valores.chMadeirado;
             break;
         }
-        if (showFitaLed) varCaixa += valores.fitaLed;
+        let calTampoMad = 1;
+        if (comprimento > 270 || largura > 270) {
+          calTampoMad = 2;
+        }
+        switch (getValues("tampo")) {
+          case "Branco":
+            varCaixa += calTampoMad * valores.chBranco;
+            break;
+          case "Sólido":
+            varCaixa += calTampoMad * valores.chSolido;
+            break;
+          case "Madeirado":
+            varCaixa += calTampoMad * valores.chMadeirado;
+            break;
+        }
+        if (showSemEnergia) {
+          varCaixa += 0;
+        } else {
+          switch (selectEnergia) {
+            case "PassaFio":
+              varCaixa += valores.passaFio;
+              break;
+            case "CaixaDeTomadas":
+              varCaixa += valores.cxTomada;
+              break;
+          }
+        }
+        if (showSemPainel) {
+          varCaixa += 0;
+        } else {
+          switch (selectPainel) {
+            case "Branco":
+              varCaixa += valores.chBranco;
+              break;
+            case "Sólido":
+              varCaixa += valores.chSolido;
+              break;
+            case "Madeirado":
+              varCaixa += valores.chMadeirado;
+              break;
+          }
+          if (showFitaLed) varCaixa += valores.fitaLed;
+        }
+        if (showMontagem && showFrete) {
+          extras += 100; // gasolina padrao
+          extras += 150; // diaria montagem
+          extras += 4 * distDestino; // gasolina extra
+        }
+        if (showMontagem && !showFrete) {
+          extras += 150; // diaria montagem
+          extras += 1 * distDestino; // gasolina extra
+        }
+        if (!showMontagem && showFrete) {
+          extras += 100; // gasolina padrao
+          extras += 4 * distDestino; // gasolina extra
+        }
       }
-      if (showMontagem && showFrete) {
-        extras += 100; // gasolina padrao
-        extras += 150; // diaria montagem
-        extras += 4 * distDestino; // gasolina extra
-      }
-      if (showMontagem && !showFrete) {
-        extras += 150; // diaria montagem
-        extras += 1 * distDestino; // gasolina extra
-      }
-      if (!showMontagem && showFrete) {
-        extras += 100; // gasolina padrao
-        extras += 4 * distDestino; // gasolina extra
-      }
-    }
-    varCaixa = varCaixa * 2.4;
-    varCaixa += extras;
-    const formatarValor = (varCaixa) => {
-      return varCaixa.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      });
+      varCaixa = varCaixa * 2.4;
+      varCaixa += extras;
+      const formatarValor = (varCaixa) => {
+        return varCaixa.toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        });
+      };
+      //console.log(varCaixa);
+      return formatarValor(varCaixa);
     };
-    //console.log(varCaixa);
-    return formatarValor(varCaixa);
-  };
-
+  }
   console.log({ errors });
 
   const onSubmit = (data) => {
